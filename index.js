@@ -9,7 +9,7 @@ const allRoute=require("./routes/allRoutes");
 const loginRoute=require("./routes/loginRoute");
 const detailRoute=require("./routes/detailsRoute");
 const personalRoute=require("./routes/personalRoutes");
-const passwordRoute=require("./routes/passwordRoutes");
+const passwordRoute=require("./routes/passwordroutes");
 
 connection()
 app.use(express.json());
