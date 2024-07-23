@@ -14,6 +14,8 @@ const userSchema = new mongoose.Schema({
     mob:{type:String,default:"Not Uploaded"},
     pincode:{type:String,default:"Not Uploaded"},
     cvv:{type:String,default:"Not Uploaded"},
+    Basket: { type: [String] },
+    purchaseQuantity:{type :[Number]}
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -37,6 +39,10 @@ const validate = (data) => {
         mob: Joi.string().default("Not Uploaded.").label("Mobile Number"),
         pincode: Joi.string().default("Not Uploaded.").label("Pincode"),
         cvv: Joi.string().default("Not Uploaded.").label("CVV"),
+        Basket: Joi.array().items(Joi.string()),
+        purchaseQuantity: Joi.array().items(Joi.number()),
+
+
     });
     return schema.validate(data);
 };
