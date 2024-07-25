@@ -15,6 +15,10 @@ const decreaseRoute=require("./routes/decreaseRoute");
 const addRoute=require("./routes/addProduct");
 const quantityRoute=require("./routes/updateQuantity");
 const decRoute=require("./routes/decreamentQuantity");
+const removeProductRoute=require("./routes/removeProduct");
+const increaseProductQuantity=require("./routes/increaseProductQuantity");
+const addressRoute=require("./routes/addressRoute");
+const buyRoute=require("./routes/buyProduct");
 
 connection()
 app.use(express.json());
@@ -31,6 +35,10 @@ app.use("/api",decreaseRoute);
 app.use("/api",addRoute);
 app.use("/api",quantityRoute);
 app.use("/api",decRoute);
+app.use("/api",removeProductRoute);
+app.use("/api",increaseProductQuantity);
+app.use("/api",addressRoute);
+app.use("/api",buyRoute);
 
 const port =  8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
