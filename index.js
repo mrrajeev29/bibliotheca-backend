@@ -19,10 +19,12 @@ const removeProductRoute=require("./routes/removeProduct");
 const increaseProductQuantity=require("./routes/increaseProductQuantity");
 const addressRoute=require("./routes/addressRoute");
 const buyRoute=require("./routes/buyProduct");
+const router = require("./routes/paymentRoute");
 
 connection()
 app.use(express.json());
 app.use(cors());
+app.use("/api",router)
 app.use("/api", productRoute);
 app.use("/api", userRoute);
 app.use("/api", allRoute);
